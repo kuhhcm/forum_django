@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Thread {{ thread.id }} detail</h1>
+<h2>{{ thread.title }} made by {{ thread.creator.username }}</h2>
+<h3>{{ thread.content }}</h3>
+<h3>{{ thread.created_at }}</h3>
+<a href="{% url 'thread_update' thread.id %}">Edit Thread</a>
+<a href="{% url 'thread_delete' thread.id %}">Delete Thread</a>
+
+{% enblock %}

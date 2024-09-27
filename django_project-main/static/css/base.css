@@ -1,0 +1,113 @@
+/* Basic CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; /* Black background */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #5c1a8a; /* Dark purple */
+    padding: 1rem;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu li {
+    display: inline;
+}
+
+.nav-menu a {
+    color: #d8b4f1; /* Light purple */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #ffffff;
+}
+
+/* Main content styles */
+main {
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    color: #d8b4f1; /* Light purple */
+    font-size: 36px;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 1rem;
+    color: #cfcfcf; /* Lighter gray */
+}
+
+/* My Profile Page */
+.profile-container {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #2e2e2e;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.profile-container h2 {
+    color: #d8b4f1; /* Light purple */
+    font-size: 28px;
+    margin-bottom: 1rem;
+}
+
+.profile-details {
+    margin-bottom: 2rem;
+}
+
+.profile-details p {
+    margin: 0.5rem 0;
+    color: #cfcfcf;
+}
+
+.profile-edit {
+    text-align: right;
+}
+
+.profile-edit button {
+    background-color: #5c1a8a;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-edit button:hover {
+    background-color: #d8b4f1;
+}

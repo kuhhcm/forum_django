@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'home' %}">Go back</a>
+<h1>Post {{ post.id }} details</h1>
+<h4>{{ post.author }}</h4>
+<h2>{{ post.content }}</h2>
+<h2>Comments:</h2>
+<ul>
+    {% for comment in comments %}
+        <li>
+            <p>{{ comment.author.username }}: {{ comment.content }}</p>
+            <p><small>{{ comment.created_at }}</small></p>
+        </li>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'post_update' post.id %}">Edit Post</a>
+<a href="{% url 'post_delete' post.id %}">Delete Post</a>
+
+<h3>Add a Comment:</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit Comment</button>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Threads</h1>
+
+{% for thread in threads %}
+
+<h2>{{ thread.title }} {{ thread.id }} made by {{ thread.creator.username }}</h2>
+<h3>{{ thread.content }}</h3>
+
+{% endfor %}
+
+{% endblock %}

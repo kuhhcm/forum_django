@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.username }}'s Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>{{ user.username }}'s Profile</h1>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        
+        <h2>Your Posts:</h2>
+        <ul>
+            {% for post in user.userprofile.posts.all %}
+                <li>
+                    <a href="{% url 'post_detail' post.id %}">{{ post.thread.title }}</a> - Posted on {{ post.created_at }}
+                </li>
+            {% empty %}
+                <p>You haven't created any posts yet.</p>
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'edit_profile' %}" class="edit-profile-button">Edit Profile</a>
+</body>
+{% endblock %}

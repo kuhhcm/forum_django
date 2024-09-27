@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Website</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Forum</a>
+            <ul class="nav-menu">
+                <li><a href="{% url 'home' %}" id="home">Home</a></li>
+                <li><a href="{% url 'post_create' %}" id="create-post">Create Post</a></li>
+                <li><a href="{% url 'my_profile' %}" id="my-profile">My Profile</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}" id="logout">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'register' %}" id="register">Register</a></li>
+                <li><a href="{% url 'login' %}" id="login">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <h1>Welcome to the Forum</h1>
+        <p>Use the navigation bar to explore different sections.</p>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+</body>
+</html>
